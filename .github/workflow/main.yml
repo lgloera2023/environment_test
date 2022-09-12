@@ -21,10 +21,6 @@ jobs:
           POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
-        with:
-          python-version: '2.x'
-          architecture: 'x64'
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
@@ -38,7 +34,7 @@ jobs:
         run: |
           bundler exec rails db:create RAILS_ENV=test
           bundler exec rails db:migrate RAILS_ENV=test
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install
       - name: Run tests
