@@ -59,7 +59,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Brakeman Security
-group :development do
-  gem 'brakeman'
-  gem 'rubocop'
-end
+# group :development do
+#   gem 'brakeman'
+#   gem 'rubocop'
+# end
+gem 'brakeman'
+gem 'rubocop'
