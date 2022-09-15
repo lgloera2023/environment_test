@@ -1,9 +1,10 @@
 # location: spec/unit/unit_spec.rb
 require 'rails_helper'
+require 'date'
 
 RSpec.describe Book, type: :model do
   subject do
-    described_class.new(title: 'harry potter')
+    described_class.new(title: 'harry potter', author: 'J.K. Rowling', price: 20.23, publishedDate: Date.new(1997,06,26))
   end
 
   it 'is valid with valid attributes' do
