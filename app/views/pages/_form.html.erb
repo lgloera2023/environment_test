@@ -1,0 +1,20 @@
+<%= error_messages_for(f.object) %>
+
+<table summary="Page form fields">
+    <tr>
+        <th>Book ID</th>
+        <td><%= f.text_field(:book_id) %></td>
+    </tr>
+    <tr>
+        <th>Chapter</th>
+        <td><%= f.text_field(:chapter) %></td>
+    </tr>
+    <tr>
+        <th>Page Number</th>
+        <td><%= f.text_field(:page_number) %></td>
+    </tr>
+    <tr>
+        <th>Content</th>
+        <td><%= f.text_area(:content, :rows => 8, :cols => 50) %></td>
+    </tr>
+</table>

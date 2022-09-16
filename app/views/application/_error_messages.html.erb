@@ -1,0 +1,10 @@
+<% if object && object.errors.size > 0 %>
+    <h2><%= pluralize(object.errors.size, "error") %> kept the record from being saved.</h2>
+
+    <p>Please fix the following fields:</p>
+    <ul>
+    <% object.errors.full_messages.each do |errmsg| %>
+        <li><%= errmsg %></li>
+    <% end %>
+    </ul>
+<% end %>

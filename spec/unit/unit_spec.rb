@@ -4,15 +4,26 @@ require 'date'
 
 RSpec.describe Book, type: :model do
   subject do
-    described_class.new(title: 'harry potter', author: 'J.K. Rowling', price: 20.23, publishedDate: Date.new(1997,06,26))
+    described_class.new
   end
 
-  it 'is valid with valid attributes' do
-    expect(subject).to be_valid
+  it 'has valid title' do
+    subject.title = "Harry Potter"
+    expect(subject.title).to eq('Harry Potter')
   end
 
-  it 'is not valid without a name' do
-    subject.title = nil
-    expect(subject).not_to be_valid
+  it 'has valid author' do
+    subject.author = "J.K. Rowling"
+    expect(subject.author).to eq('J.K. Rowling')
+  end
+
+  it 'has valid price' do
+    subject.price = 20.23
+    expect(subject.price).to eq(20.23)
+  end
+
+  it 'has valid date' do
+    subject.publishedDate = Date.new(1997,6,26)
+    expect(subject.publishedDate).to eq(Date.new(1997,6,26))
   end
 end

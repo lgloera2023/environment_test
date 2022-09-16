@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_15_201147) do
+ActiveRecord::Schema.define(version: 2022_09_16_013207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,13 @@ ActiveRecord::Schema.define(version: 2022_09_15_201147) do
 
   create_table "pages", force: :cascade do |t|
     t.integer "chapter"
-    t.integer "pageNumber"
+    t.integer "page_number"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "book_id", null: false
+    t.index ["book_id"], name: "index_pages_on_book_id"
   end
 
+  add_foreign_key "pages", "books"
 end

@@ -1,0 +1,30 @@
+<nav><%= link_to("Home", books_path, :class => 'action index') %></nav>
+
+<h1>Pages</h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to("Add New Page", new_page_path, :class => 'action new') %>
+
+<table summary="Page List">
+    <tr>
+        <th>Book</th>
+        <th>Chapter</th>
+        <th>Page Number</th>
+        <th>Content</th>
+        <th>Actions</th>
+    </tr>
+    <% @pages.each do |page| %>
+    <tr>
+        <td><%= page.book.title %></td>
+        <td><%= page.chapter %></td>
+        <td><%= page.page_number %></td>
+        <td><%= page.content %></td>
+        <td>
+            <%= link_to("Show", page_path(page), :class => 'action show') %>
+            <%= link_to("Edit", edit_page_path(page), :class => 'action edit') %>
+            <%= link_to("Delete", delete_page_path(page), :class => 'action delete') %>
+        </td>
+    </tr>
+    <% end %>
+</table>

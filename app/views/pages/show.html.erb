@@ -1,0 +1,25 @@
+<nav><%= link_to("Home", books_path, :class => 'action index') %></nav>
+
+<%= link_to("Back to List", pages_path, :class => 'back-link') %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Page Details</h1>
+<table summary="Page detail view">
+    <tr>
+        <th>Book Title</th>
+        <td><%= @page.book.title %></td>
+    </tr>
+    <tr>
+        <th>Chapter</th>
+        <td><%= @page.chapter %></td>
+    </tr>
+    <tr>
+        <th>Page Number</th>
+        <td><%= @page.page_number %></td>
+    </tr>
+    <tr>
+        <th>Content</th>
+        <td><%= @page.content %></td>
+    </tr>
+</table>
