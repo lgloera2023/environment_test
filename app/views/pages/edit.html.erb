@@ -1,0 +1,11 @@
+<nav><%= link_to("Home", books_path, :class => 'action index') %></nav>
+
+<%= link_to("Back to List", pages_path, :class => 'back-link') %>
+
+<h1>Edit Page</h1>
+
+<%= form_for(@page) do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <%= f.submit("Save") %>
+<% end %>
