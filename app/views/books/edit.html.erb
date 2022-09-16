@@ -2,6 +2,10 @@
 
 <h1>Editing Book</h1>
 
-<%= render 'form', book: @book %>
+<%= form_for(@book) do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <%= f.submit("Save") %>
+<% end %>
 
 <%= link_to 'Show', @book %>
